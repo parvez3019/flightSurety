@@ -9,7 +9,7 @@ module.exports = {
   },
   module: {
     rules: [
-    {
+      {
         test: /\.(js|jsx)$/,
         use: "babel-loader",
         exclude: /node_modules/
@@ -32,7 +32,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({ 
+    new HtmlWebpackPlugin({
       template: path.join(__dirname, "src/dapp/index.html")
     })
   ],
@@ -40,8 +40,7 @@ module.exports = {
     extensions: [".js"]
   },
   devServer: {
-    contentBase: path.join(__dirname, "dapp"),
-    port: 8000,
-    stats: "minimal"
+    static: path.join(__dirname, "dapp"),
+    port: 8000
   }
 };
